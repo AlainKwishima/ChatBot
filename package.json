@@ -1,0 +1,21 @@
+{
+  "name": "chatbot-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "server",
+    "widget"
+  ],
+  "scripts": {
+    "start:server": "npm run start --workspace=server",
+    "dev:server": "npm run dev --workspace=server",
+    "dev:widget": "npm run dev --workspace=widget",
+    "build:widget": "npm run build --workspace=widget",
+    "build:server": "npm run build --workspace=server",
+    "setup": "npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:widget\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
