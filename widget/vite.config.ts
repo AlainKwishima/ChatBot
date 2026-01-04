@@ -7,10 +7,11 @@ export default defineConfig({
     plugins: [react()],
     build: {
         rollupOptions: {
-            input: resolve(__dirname, 'src/main.tsx'),
+            input: {
+                main: resolve(__dirname, 'index.html'),
+            },
             output: {
-                // Force a single file name for simpler embedding
-                entryFileNames: `assets/widget.js`,
+                entryFileNames: `assets/[name].js`,
                 chunkFileNames: `assets/[name].js`,
                 assetFileNames: `assets/[name].[ext]`
             }
